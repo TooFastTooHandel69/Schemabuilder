@@ -3,62 +3,62 @@ package com.company;
 import java.util.*;
 import java.util.Scanner;
 
-class oefeningen
+class Oefening
 {
-    private static ArrayList<frame> alleOefeningen;
+    private static ArrayList<Structuur> alleOefeningen;
     private String naam;
     private String doel;
-    private static ArrayList<frame> initialiseerOefeningen(){
-        alleOefeningen = new ArrayList<frame>();
-        alleOefeningen.add(new frame("Dumbell-Shoulder-press", "Schouder",4,10,60, 20));
-        alleOefeningen.add(new frame("Overhead-press", "Schouder",4,10,60, 30));
-        alleOefeningen.add(new frame("shoulder-fly", "Schouder",4,10,60, 14));
-        alleOefeningen.add(new frame("reverse-cable-crossover", "Schouder",4,10,60, 9));
-        alleOefeningen.add(new frame("behind-the-neck-press", "Schouder",4,10,60, 30));
+    private static ArrayList<Structuur> initialiseerOefeningen(){
+        alleOefeningen = new ArrayList<Structuur>();
+        alleOefeningen.add(new Structuur("Dumbell-Shoulder-press", "Schouder",4,10,60, 20));
+        alleOefeningen.add(new Structuur("Overhead-press", "Schouder",4,10,60, 30));
+        alleOefeningen.add(new Structuur("shoulder-fly", "Schouder",4,10,60, 14));
+        alleOefeningen.add(new Structuur("reverse-cable-crossover", "Schouder",4,10,60, 9));
+        alleOefeningen.add(new Structuur("behind-the-neck-press", "Schouder",4,10,60, 30));
 
-        alleOefeningen.add(new frame("Bicep-curls","Bicep", 3, 12, 30, 30));
-        alleOefeningen.add(new frame("Barbell-curls", "Bicep", 5, 10, 60, 35));
-        alleOefeningen.add(new frame("Hammer-Curls", "Bicep", 3,12,30,16));
-        alleOefeningen.add(new frame("Bicep-Cable-Curl", "Bicep", 5,10,15,23));
+        alleOefeningen.add(new Structuur("Bicep-curls","Bicep", 3, 12, 30, 30));
+        alleOefeningen.add(new Structuur("Barbell-curls", "Bicep", 5, 10, 60, 35));
+        alleOefeningen.add(new Structuur("Hammer-Curls", "Bicep", 3,12,30,16));
+        alleOefeningen.add(new Structuur("Bicep-Cable-Curl", "Bicep", 5,10,15,23));
 
-        alleOefeningen.add(new frame("Tricep-extensions","Tricep", 5,10,30,20));
-        alleOefeningen.add(new frame("Cable-push-down","Tricep", 5,10,60,30));
-        alleOefeningen.add(new frame("Kick-Backs","Tricep", 5,10,45,12));
+        alleOefeningen.add(new Structuur("Tricep-extensions","Tricep", 5,10,30,20));
+        alleOefeningen.add(new Structuur("Cable-push-down","Tricep", 5,10,60,30));
+        alleOefeningen.add(new Structuur("Kick-Backs","Tricep", 5,10,45,12));
 
-        alleOefeningen.add(new frame("Sit-ups", "Buik", 3,25,30, 30));
-        alleOefeningen.add(new frame("Plank", "Buik", 3,60,120, 0));
-        alleOefeningen.add(new frame("Reverse-crunsh", "Buik", 4,25,30, 30));
+        alleOefeningen.add(new Structuur("Sit-ups", "Buik", 3,25,30, 30));
+        alleOefeningen.add(new Structuur("Plank", "Buik", 3,60,120, 0));
+        alleOefeningen.add(new Structuur("Reverse-crunsh", "Buik", 4,25,30, 30));
 
-        alleOefeningen.add(new frame("Squats","Benen", 5,10,60,100));
-        alleOefeningen.add(new frame("Stiff-leg-deadlift","Benen", 5,10,60,70));
-        alleOefeningen.add(new frame("leg-extensions","Benen", 4,10,60,50));
-        alleOefeningen.add(new frame("Hack-squats","Benen", 4,10,80,120));
-        alleOefeningen.add(new frame("Leg-curl","Benen", 4,10,30,40));
+        alleOefeningen.add(new Structuur("Squats","Benen", 5,10,60,100));
+        alleOefeningen.add(new Structuur("Stiff-leg-deadlift","Benen", 5,10,60,70));
+        alleOefeningen.add(new Structuur("leg-extensions","Benen", 4,10,60,50));
+        alleOefeningen.add(new Structuur("Hack-squats","Benen", 4,10,80,120));
+        alleOefeningen.add(new Structuur("Leg-curl","Benen", 4,10,30,40));
 
-        alleOefeningen.add(new frame("Lat-pull-downs", "Rug", 4,12,30,45));
-        alleOefeningen.add(new frame("Dubbel-rows", "Rug", 5,8,60,30));
-        alleOefeningen.add(new frame("T-bar", "Rug", 5,10,80,50));
-        alleOefeningen.add(new frame("Seated-row", "Rug", 5,8,60,60));
-        alleOefeningen.add(new frame("Pull-Ups", "Rug", 5,8,60,100));
+        alleOefeningen.add(new Structuur("Lat-pull-downs", "Rug", 4,12,30,45));
+        alleOefeningen.add(new Structuur("Dubbel-rows", "Rug", 5,8,60,30));
+        alleOefeningen.add(new Structuur("T-bar", "Rug", 5,10,80,50));
+        alleOefeningen.add(new Structuur("Seated-row", "Rug", 5,8,60,60));
+        alleOefeningen.add(new Structuur("Pull-Ups", "Rug", 5,8,60,100));
 
-        alleOefeningen.add(new frame("Bench press", "Borst",3,6,30, 140));
-        alleOefeningen.add(new frame("Cable-fly", "Borst",4,12,30, 41));
-        alleOefeningen.add(new frame("incline-Bench press", "Borst",3,10,30, 80));
-        alleOefeningen.add(new frame("Low-Cable-Crossovers", "Borst",4,12,30, 14));
-        alleOefeningen.add(new frame("Dumbell-press", "Borst",4,12,30, 14));
+        alleOefeningen.add(new Structuur("Bench press", "Borst",3,6,30, 140));
+        alleOefeningen.add(new Structuur("Cable-fly", "Borst",4,12,30, 41));
+        alleOefeningen.add(new Structuur("incline-Bench press", "Borst",3,10,30, 80));
+        alleOefeningen.add(new Structuur("Low-Cable-Crossovers", "Borst",4,12,30, 14));
+        alleOefeningen.add(new Structuur("Dumbell-press", "Borst",4,12,30, 14));
 
 
-        alleOefeningen.add(new frame("Seated Calve-Raises", "Kuiten",3,12,30, 40));
-        alleOefeningen.add(new frame("Standing Calve-Raises", "Kuiten",3,12,30, 40));
+        alleOefeningen.add(new Structuur("Seated Calve-Raises", "Kuiten",3,12,30, 40));
+        alleOefeningen.add(new Structuur("Standing Calve-Raises", "Kuiten",3,12,30, 40));
 
 
         return alleOefeningen;
     }
-    public oefeningen(String naam){
+    public Oefening(String naam){
         initialiseerOefeningen();
         this.naam = naam;
     }
-    public oefeningen(String naam, String doel){
+    public Oefening(String naam, String doel){
         this(naam);
         this.doel = doel;
 
@@ -79,7 +79,7 @@ class oefeningen
             System.out.println("Droom body: " + this.doel);
         }
         for(String kay : spierGroep){
-            for (frame oefening : alleOefeningen){
+            for (Structuur oefening : alleOefeningen){
                 if(kay.equals(oefening.getSpierGroep())){
                     printOefening(oefening.getNaam(), oefening.getSpierGroep(), oefening.getAantalSets(), oefening.getHerhalingen(), oefening.getRustTijd(), oefening.getGewicht());
                 }
@@ -89,14 +89,14 @@ class oefeningen
 
     }
 }
-class frame{
+class Structuur {
     private String naam;
     private String spierGroep;
     private Integer aantalSets;
     private Integer reps;
     private Integer rustTijd;
     private Integer gewicht;
-    public frame(String naam, String spierGroup, Integer aantalsets,Integer reps, Integer rustTijd, Integer gewicht){
+    public Structuur(String naam, String spierGroup, Integer aantalsets, Integer reps, Integer rustTijd, Integer gewicht){
         this.naam = naam;
         this.spierGroep = spierGroup;
         this.aantalSets = aantalsets;
@@ -123,12 +123,12 @@ class frame{
     public Integer getGewicht() {return this.gewicht;}
 
 }
-class schema extends menu {
+class Schema{
     private String name;
     private String dreamBody;
     private ArrayList<TrainingDag> TrainingsDagen;
 
-    public schema() {
+    public Schema() {
         TrainingsDagen = new ArrayList<>();
         initialiseerDag();
     }
@@ -171,7 +171,7 @@ class schema extends menu {
     }
 
     private void PrintTrainingsSchema(ArrayList<String> muscleGroups) {
-        oefeningen oefeningen = new oefeningen(name, dreamBody);
+        Oefening oefeningen = new Oefening(name, dreamBody);
         oefeningen.printSchema(muscleGroups);
         System.out.println();
     }
@@ -191,190 +191,9 @@ class schema extends menu {
         }
     }
 
-//    public void lijst() {
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.println("Wat is uw naam?");
-//        String voor = scanner.nextLine();
-//        System.out.println("Geef hier de naam van een persoon waarvan jij zijn lichaam bewondert.");
-//        String droom = scanner.nextLine();
-//            System.out.println("Laten we aan de slag gaan!");
-//        System.out.println("Hoeveel dagen wilt u dit week trainen");
-//        Integer dag = scanner.nextInt();
-//        if (dag == 3) {
-//            System.out.println("Day 1:");
-//            ArrayList<String> day1MuscleGroups = new ArrayList<>();
-//            day1MuscleGroups.add("Back");
-//            day1MuscleGroups.add("Biceps");
-//            day1MuscleGroups.add("Abs");
-//            oefeningen kp = new oefeningen(voor, droom);
-//            kp.printSchema(day1MuscleGroups);
-//
-//            System.out.println("Day 2:");
-//            ArrayList<String> day2MuscleGroups = new ArrayList<>();
-//            day2MuscleGroups.add("Legs");
-//            day2MuscleGroups.add("Shoulders");
-//            day2MuscleGroups.add("Calves");
-//            oefeningen sp = new oefeningen(voor, droom);
-//            sp.printSchema(day2MuscleGroups);
-//
-//            System.out.println("Day 3:");
-//            ArrayList<String> day3MuscleGroups = new ArrayList<>();
-//            day3MuscleGroups.add("Chest");
-//            day3MuscleGroups.add("Triceps");
-//            oefeningen YP = new oefeningen(voor, droom);
-//            YP.printSchema(day3MuscleGroups);
-//        }
-//        else if (dag == 4) {
-//            System.out.println("Dag EEN Gaat als volgt");
-//            ArrayList<String> koen = new ArrayList<>();
-//            koen.add("Rug");
-//            koen.add("Buik");
-//            oefeningen koenP = new oefeningen(voor,droom);
-//            koenP.printSchema(koen);
-//            System.out.println("Dag Twee kom op hou het vol!!!");
-//            ArrayList<String> koen1 = new ArrayList<>();
-//            koen1.add("Benen");
-//            koen1.add("Kuiten");
-//            oefeningen koenT = new oefeningen(voor);
-//            koenT.printSchema(koen1);
-//            System.out.println("Dag Drie!!");
-//            ArrayList<String> koen2 = new ArrayList<>();
-//            koen2.add("Borst");
-//            koen2.add("Tricep");
-//            oefeningen koenK = new oefeningen(voor);
-//            koenK.printSchema(koen2);
-//            System.out.println("Dag Vier!!!!");
-//            ArrayList<String> koen3 = new ArrayList<>();
-//            koen3.add("Bicep");
-//            koen3.add("Schouder");
-//            oefeningen koenw = new oefeningen(voor);
-//            koenw.printSchema(koen3);
-//        }
-//        else if (dag == 5) {
-//            System.out.println("Dag EEN Gaat als volgt");
-//            ArrayList<String> koen = new ArrayList<>();
-//            koen.add("Rug");
-//            koen.add("Buik");
-//            oefeningen koenP = new oefeningen(voor,droom);
-//            koenP.printSchema(koen);
-//            System.out.println("Dag Twee kom op hou het vol!!!");
-//            ArrayList<String> koen1 = new ArrayList<>();
-//            koen1.add("Benen");
-//            koen1.add("Kuiten");
-//            oefeningen koenT = new oefeningen(voor);
-//            koenT.printSchema(koen1);
-//            System.out.println("Dag Drie!!");
-//            ArrayList<String> koen2 = new ArrayList<>();
-//            koen2.add("Borst");
-//            koen2.add("Tricep");
-//            oefeningen koenK = new oefeningen(voor);
-//            koenK.printSchema(koen2);
-//            System.out.println("Dag Vier!!!!");
-//            ArrayList<String> koen3 = new ArrayList<>();
-//            koen3.add("Bicep");
-//            koen3.add("Schouder");
-//            oefeningen koenw = new oefeningen(voor);
-//            koenw.printSchema(koen3);
-//            System.out.println("Dag Vijf!!!!");
-//            ArrayList<String> koen4 = new ArrayList<>();
-//            koen4.add("Benen");
-//            koen4.add("Borst");
-//            oefeningen koenq = new oefeningen(voor);
-//            koenq.printSchema(koen4);
-//        }
-//        else if (dag == 6) {
-//            System.out.println("Dag EEN Gaat als volgt");
-//            ArrayList<String> koen = new ArrayList<>();
-//            koen.add("Rug");
-//            koen.add("Buik");
-//            oefeningen koenP = new oefeningen(voor,droom);
-//            koenP.printSchema(koen);
-//            System.out.println("Dag Twee kom op hou het vol!!!");
-//            ArrayList<String> koen1 = new ArrayList<>();
-//            koen1.add("Benen");
-//            koen1.add("Kuiten");
-//            oefeningen koenT = new oefeningen(voor);
-//            koenT.printSchema(koen1);
-//            System.out.println("Dag Drie!!");
-//            ArrayList<String> koen2 = new ArrayList<>();
-//            koen2.add("Borst");
-//            koen2.add("Tricep");
-//            oefeningen koenK = new oefeningen(voor);
-//            koenK.printSchema(koen2);
-//            System.out.println("Dag Vier!!!!");
-//            ArrayList<String> koen3 = new ArrayList<>();
-//            koen3.add("Bicep");
-//            koen3.add("Schouder");
-//            oefeningen koenw = new oefeningen(voor);
-//            koenw.printSchema(koen3);
-//            System.out.println("Dag Vijf!!!!");
-//            ArrayList<String> koen4 = new ArrayList<>();
-//            koen4.add("Benen");
-//            koen4.add("Borst");
-//            oefeningen koenq = new oefeningen(voor);
-//            koenq.printSchema(koen4);
-//            System.out.println("Dag zes kom op hou het vol!!!!");
-//            ArrayList<String> koen5 = new ArrayList<>();
-//            koen5.add("Rug");
-//            koen5.add("Bicep");
-//            koen5.add("Tricep");
-//            oefeningen koenr = new oefeningen(voor);
-//            koenr.printSchema(koen5);
-//        }
-//        else if (dag == 7) {
-//            System.out.println("Dag EEN Gaat als volgt");
-//            ArrayList<String> koen = new ArrayList<>();
-//            koen.add("Rug");
-//            koen.add("Buik");
-//            oefeningen koenP = new oefeningen(voor,droom);
-//            koenP.printSchema(koen);
-//            System.out.println("Dag Twee kom op hou het vol!!!");
-//            ArrayList<String> koen1 = new ArrayList<>();
-//            koen1.add("Benen");
-//            koen1.add("Kuiten");
-//            oefeningen koenT = new oefeningen(voor);
-//            koenT.printSchema(koen1);
-//            System.out.println("Dag Drie!!");
-//            ArrayList<String> koen2 = new ArrayList<>();
-//            koen2.add("Borst");
-//            koen2.add("Tricep");
-//            oefeningen koenK = new oefeningen(voor);
-//            koenK.printSchema(koen2);
-//            System.out.println("Dag Vier!!!!");
-//            ArrayList<String> koen3 = new ArrayList<>();
-//            koen3.add("Bicep");
-//            koen3.add("Schouder");
-//            oefeningen koenw = new oefeningen(voor);
-//            koenw.printSchema(koen3);
-//            System.out.println("Dag Vijf!!!!");
-//            ArrayList<String> koen4 = new ArrayList<>();
-//            koen4.add("Benen");
-//            koen4.add("Borst");
-//            oefeningen koenq = new oefeningen(voor);
-//            koenq.printSchema(koen4);
-//            System.out.println("Dag zes kom op hou het vol!!!!");
-//            ArrayList<String> koen5 = new ArrayList<>();
-//            koen5.add("Rug");
-//            koen5.add("Bicep");
-//            koen5.add("Tricep");
-//            oefeningen koenr = new oefeningen(voor);
-//            koenr.printSchema(koen5);
-//            System.out.println("Dag zeven als je dit iedere week doet ben je voordat je het weet je eigen droom body<3<3<3");
-//            ArrayList<String> koen6 = new ArrayList<>();
-//            koen6.add("Schouder");
-//            koen6.add("Kuiten");
-//            koen6.add("Buik");
-//            oefeningen koent = new oefeningen(voor);
-//            koent.printSchema(koen6);
-//        }
-//        else {
-//            System.out.println("De aantal dagen die u heeft aangegeven om te trainen is niet reëel.");
-//            System.out.println("Ik raad u aan om keuze twee te kiezen.");
-//        }
 
-//    }
 }
-class menu{
+class Menu {
     public void lijst() {
         String[] list = {"Typ een getal voor uw keuze.", "1. Trainingschema", "2. Oefeningen voor een spiergroep naar keuze"};
 
@@ -383,14 +202,18 @@ class menu{
         }
     }
 }
-class spiergroep extends menu{
+class Spiergroep{
+
+    private String voor;
+
+    private String droom;
 
     public void lijst() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Wat is uw naam?");
-        String voor = scanner.nextLine();
+        voor = scanner.nextLine();
         System.out.println("Geef hier de naam van een persoon waarvan jij zijn lichaam bewondert.");
-        String droom = scanner.nextLine();
+        droom = scanner.nextLine();
         System.out.println("Laten we aan de slag gaan!");
         String[] list = {"Kies welke spiergroep je wilt trainen","Typ een getal voor uw keuze.", "1.Borst", "2.Rug", "3.Benen", "4.Schouder", "5.Buik", "6.Bicep", "7.Tricep", "8.Kuiten"};
 
@@ -400,58 +223,112 @@ class spiergroep extends menu{
 
         int num = scanner.nextInt();
         if (num==1){
-            ArrayList<String> koen = new ArrayList<>();
-            koen.add("Borst");
-            oefeningen koenP = new oefeningen(voor,droom);
-            koenP.printSchema(koen);
+            Borst h = new Borst();
+            h.Exercise();
         }
         else if (num==2){
-            ArrayList<String> koen = new ArrayList<>();
-            koen.add("Rug");
-            oefeningen koenP = new oefeningen(voor,droom);
-            koenP.printSchema(koen);
+           Rug C = new Rug();
+           C.Exercise();
         }
         else if (num==3){
-            ArrayList<String> koen = new ArrayList<>();
-            koen.add("Benen");
-            oefeningen koenP = new oefeningen(voor,droom);
-            koenP.printSchema(koen);
+            Benen C = new Benen();
+            C.Exercise();
         }
         else if (num==4){
-            ArrayList<String> koen = new ArrayList<>();
-            koen.add("Schouder");
-            oefeningen koenP = new oefeningen(voor,droom);
-            koenP.printSchema(koen);
+            Schouder C = new Schouder();
+            C.Exercise();
         }
         else if (num==5){
-            ArrayList<String> koen = new ArrayList<>();
-            koen.add("Buik");
-            oefeningen koenP = new oefeningen(voor,droom);
-            koenP.printSchema(koen);
+            BuikSpieren C = new BuikSpieren();
+            C.Exercise();
         }
         else if (num==6){
-            ArrayList<String> koen = new ArrayList<>();
-            koen.add("Bicep");
-            oefeningen koenP = new oefeningen(voor,droom);
-            koenP.printSchema(koen);
+            Bicep C = new Bicep();
+            C.Exercise();
         }
         else if (num==7){
-            ArrayList<String> koen = new ArrayList<>();
-            koen.add("Tricep");
-            oefeningen koenP = new oefeningen(voor,droom);
-            koenP.printSchema(koen);
+            Tricep C = new Tricep();
+            C.Exercise();
         }
         else if (num==8){
-            ArrayList<String> koen = new ArrayList<>();
-            koen.add("Kuiten");
-            oefeningen koenP = new oefeningen(voor,droom);
-            koenP.printSchema(koen);
+            Kuiten C = new Kuiten();
+            C.Exercise();
         }
         else{
             System.out.println("Moeilijk he een getal kiezen!");
         }
     }
+    public String getDroom() {
+        return droom;
+    }
+    public String getVoor() {
+        return voor;
+    }
 
+}
+class Borst extends Spiergroep{
+    public void Exercise() {
+        ArrayList<String> koen = new ArrayList<>();
+        koen.add("Borst");
+        Oefening koenP = new Oefening(getVoor(),getDroom());
+        koenP.printSchema(koen);
+    }
+}
+class Rug extends Spiergroep{
+    public void Exercise() {
+        ArrayList<String> koen = new ArrayList<>();
+        koen.add("Rug");
+        Oefening koenP = new Oefening(getVoor(),getDroom());
+        koenP.printSchema(koen);
+    }
+}
+class Benen extends Spiergroep{
+    public void Exercise() {
+        ArrayList<String> koen = new ArrayList<>();
+        koen.add("Benen");
+        Oefening koenP = new Oefening(getVoor(),getDroom());
+        koenP.printSchema(koen);
+    }
+}
+class Schouder extends Spiergroep{
+    public void Exercise() {
+        ArrayList<String> koen = new ArrayList<>();
+        koen.add("Schouder");
+        Oefening koenP = new Oefening(getVoor(),getDroom());
+        koenP.printSchema(koen);
+    }
+}
+class BuikSpieren extends Spiergroep{
+    public void Exercise() {
+        ArrayList<String> koen = new ArrayList<>();
+        koen.add("buik");
+        Oefening koenP = new Oefening(getVoor(),getDroom());
+        koenP.printSchema(koen);
+    }
+}
+class Bicep extends Spiergroep{
+    public void Exercise() {
+        ArrayList<String> koen = new ArrayList<>();
+        koen.add("Bicep");
+        Oefening koenP = new Oefening(getVoor(),getDroom());
+        koenP.printSchema(koen);
+    }
+}
+class Tricep extends Spiergroep{
+    public void Exercise() {
+        ArrayList<String> koen = new ArrayList<>();
+        koen.add("Tricep");
+        Oefening koenP = new Oefening(getVoor(),getDroom());
+        koenP.printSchema(koen);
+    }
+}
+class Kuiten extends Spiergroep{
+    public void Exercise() {
+        ArrayList<String> koen = new ArrayList<>();
+        koen.add("Kuiten");
+        Oefening koenP = new Oefening(getVoor(),getDroom());
+        koenP.printSchema(koen);
+    }
 }
 
 
@@ -463,11 +340,11 @@ class Main
     {
 
         Scanner scanner = new Scanner(System.in);
-        menu y = new menu();
+        Menu y = new Menu();
         y.lijst();
         int num = scanner.nextInt();
-        schema h = new schema();
-        spiergroep k = new spiergroep();
+        Schema h = new Schema();
+        Spiergroep k = new Spiergroep();
         if (num==1){
             h.schemaGenarator();
         }
